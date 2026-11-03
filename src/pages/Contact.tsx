@@ -22,14 +22,6 @@ export default function Contact() {
     },
   ];
 
-  const companyDetails = {
-    cin: 'L25200MH1988PLC048178',
-    registeredOffice: 'Betegaon Village, Boisar (East), Taluka Palghar, Dist. Thane 401501-Maharashtra, India',
-    tel: '02525 271 881/83',
-    fax: '02525-271 882',
-    email: 'maviindustriesltd@gmail.com',
-  };
-
   return (
     <div className="animate-fade-in ">
       {/* Hero */}

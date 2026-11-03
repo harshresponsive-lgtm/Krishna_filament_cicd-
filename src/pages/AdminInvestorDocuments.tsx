@@ -121,46 +121,40 @@ export default function AdminInvestorDocuments() {
 
   /*
    * ---------------------------------------------------------
-   * LOAD CATEGORIES
-   * ---------------------------------------------------------
-   */
-
-  async function loadCategories() {
-    const { data, error } = await supabase
-      .from('ir_categories')
-      .select('id, slug, name')
-      .eq('is_active', true)
-      .order('sort_order', { ascending: true });
-
-    if (error) {
-      console.error('Error loading categories:', error);
-
-      setMessage({
-        type: 'error',
-        text: error.message,
-      });
-
-      return;
-    }
-
-    setCategories(data ?? []);
-
-    /*
-     * Automatically select first category
-     * if none has been selected yet.
-     */
-    if (data && data.length > 0 && !categoryId) {
-      setCategoryId(data[0].id);
-    }
-  }
-
-  /*
-   * ---------------------------------------------------------
    * INITIAL LOAD
    * ---------------------------------------------------------
    */
 
   useEffect(() => {
+    async function loadCategories() {
+      const { data, error } = await supabase
+        .from('ir_categories')
+        .select('id, slug, name')
+        .eq('is_active', true)
+        .order('sort_order', { ascending: true });
+
+      if (error) {
+        console.error('Error loading categories:', error);
+
+        setMessage({
+          type: 'error',
+          text: error.message,
+        });
+
+        return;
+      }
+
+      setCategories(data ?? []);
+
+      /*
+       * Automatically select first category
+       * if none has been selected yet.
+       */
+      if (data && data.length > 0) {
+        setCategoryId((prev) => prev || data[0].id);
+      }
+    }
+
     async function load() {
       await Promise.all([
         loadDocuments(),

@@ -27,6 +27,7 @@ export function RouterProvider({ children }: { children: ReactNode }) {
   return <RouterContext.Provider value={{ path, navigate }}>{children}</RouterContext.Provider>;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useRouter() {
   return useContext(RouterContext);
 }

@@ -1,29 +1,6 @@
-import { Target, Eye, Factory, Globe2, Award, Leaf } from 'lucide-react';
+import { Target, Eye } from 'lucide-react';
 
 export default function About() {
-  const values = [
-    {
-      icon: Factory,
-      title: 'Manufacturing Excellence',
-      desc: 'Advanced technology and rigorous quality control at every stage.',
-    },
-    {
-      icon: Award,
-      title: 'Quality First',
-      desc: 'Products engineered to meet and exceed international standards.',
-    },
-    {
-      icon: Globe2,
-      title: 'Global Reach',
-      desc: 'Serving customers across continents with dependable supply.',
-    },
-    {
-      icon: Leaf,
-      title: 'Sustainability',
-      desc: 'Responsible manufacturing practices that respect the environment.',
-    },
-  ];
-
   return (
     <div className="animate-fade-in ">
       {/* Hero */}

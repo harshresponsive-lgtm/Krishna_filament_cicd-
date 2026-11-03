@@ -1,23 +1,5 @@
 import { Link } from '@/router';
-import { irItems } from '@/data/ir';
-import {
-  ArrowRight,
-  ShieldCheck,
-  Factory,
-  Award,
-  TrendingUp,
-  Globe2,
-  ChevronRight,
-} from 'lucide-react';
-
-const heroImg =
-  'https://images.pexels.com/photos/21838292/pexels-photo-21838292.jpeg?auto=compress&cs=tinysrgb&w=1600';
-
-const factoryImg =
-  'https://images.pexels.com/photos/14804699/pexels-photo-14804699.jpeg?auto=compress&cs=tinysrgb&w=1200';
-
-const ropeImg =
-  'https://images.pexels.com/photos/12506838/pexels-photo-12506838.jpeg?auto=compress&cs=tinysrgb&w=1200';
+import { ArrowRight } from 'lucide-react';
 
 export default function Home() {
   return (
